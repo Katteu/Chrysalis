@@ -47,6 +47,7 @@ public class CborSerializerTests
     [InlineData("d81e82011864", typeof(CborRationalNumber))] // Serialized CBOR for RationalNumber
     [InlineData("8301194a397272312e3170657263656e74706f6f6c2e6575", typeof(Relay))] // Serialized CBOR for Relay
     [InlineData("a1636d736781774d696e737761703a204f72646572204578656375746564", typeof(TransactionMetadatum))]
+    [InlineData("a11902a2a1636d736781774d696e737761703a204f72646572204578656375746564", typeof(AuxiliaryData))]
     public void SerializeAndDeserializePrimitives(string cborHex, Type type)
     {
         // Arrange

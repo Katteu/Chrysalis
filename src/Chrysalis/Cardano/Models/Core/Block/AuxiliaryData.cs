@@ -5,13 +5,13 @@ namespace Chrysalis.Cardano.Models.Core.Block;
 
 [CborSerializable(CborType.Union)]
 [CborUnionTypes([
-    
+    typeof(Metadata),
+    typeof(ShellyMaAuxiliaryData),
+    typeof(PostAlonzoAuxiliaryData),
 ])]
 public record AuxiliaryData : ICbor;
-
-[CborSerializable(CborType.Map)]
 public record Metadata(
-    
+    Dictionary<CborUlong, TransactionMetadatum> MetadataMap
 ): AuxiliaryData;
 
 [CborSerializable(CborType.List)]

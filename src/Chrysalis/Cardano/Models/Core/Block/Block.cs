@@ -16,7 +16,7 @@ public record ConwayBlock(
     [CborProperty(0)] BlockHeader Header,
     [CborProperty(1)] CborIndefiniteList<TransactionBody> TransactionBodies,
     [CborProperty(2)] CborIndefiniteList<TransactionWitnessSet> TransactionWitnessSets, //@TODO: Finish TransactionWitnessSets
-    [CborProperty(3)] CborMap<CborBytes,CborBytes> AuxiliaryDataSet, //@TODO: Define auxiliary_data_set
+    [CborProperty(3)] CborMap<CborInt,AuxiliaryData> AuxiliaryDataSet, //@TODO: Define auxiliary_data_set
     [CborProperty(4)] CborIndefiniteList<CborInt> InvalidTransactions
 ) : Block;
 
